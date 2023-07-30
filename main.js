@@ -5,6 +5,24 @@ const FULL_HEART = '♥'
 // Your JavaScript code goes here!
 
 
+const hearts = document.querySelectorAll(`.like-glyph`)
+console.log(hearts)
+
+for (let element of hearts){
+  element.addEventListener(`click`, () => {
+    if (element.innerText === EMPTY_HEART) {
+      element.innerText = FULL_HEART
+      element.classList.add(`activated-heart`)
+    }
+    else if (element.innerText === FULL_HEART) {
+      element.innerText = EMPTY_HEART
+      element.classList.remove(`activated-heart`)
+    }
+  })
+  
+}
+
+
 
 
 //------------------------------------------------------------------------------
